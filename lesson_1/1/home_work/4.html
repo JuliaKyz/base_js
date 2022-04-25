@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Необязательное задание.
 
 Необходимо от пользователя получить число.
@@ -23,12 +25,34 @@
 Пользователь ввел число 9537. Программа должна вывести:
 "В числе 9537 количество сотен: 5, десятков: 3, единиц: 7"
 
-Уточнение: пользователь всегда вводит корректное положительное целое число.
+Уотчнение: пользователь всегда вводит корректное положительное целое число.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
+    let userNumber = prompt("Введите число");
+    //находим количество сотен
+    let remainderAfterDividingBy1000 = userNumber % 1000;
+    let numberOfHundredsWithFractionalPart = remainderAfterDividingBy1000 / 100;
+    let numberOfHundreds = Math.trunc(numberOfHundredsWithFractionalPart);
+    //находим количество десятков
+    let remainderAfterDividingBy100 = userNumber % 100;
+    let numberOfTensWithFractionalPart = remainderAfterDividingBy100 / 10;
+    let numberOfTens = Math.trunc(numberOfTensWithFractionalPart);
+    //находим количество единиц
+    let numberOfUnits = userNumber % 10;
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    //2 вариант решения использую строку
+    // let numberStr = '' + userNumber;
+    // let numberOfHundreds = numberStr.charAt(numberStr.length - 3);
+    // let numberOfTens = numberStr.charAt(numberStr.length - 2);
+    // let numberOfUnits = numberStr.charAt(numberStr.length - 1);
+
+    //выводим сообщение
+    let message = 'В числе ' + userNumber + ' количество сотен:  ' + numberOfHundreds + ', десятков: ' + numberOfTens + ', единиц: ' + numberOfUnits;
+    alert(message)
+
+
+  </script>
 </body>
+
 </html>

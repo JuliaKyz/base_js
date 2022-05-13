@@ -32,15 +32,39 @@
     ];
 
 
-    products.forEach(product => product.price *= 0.85);
+    products.forEach(function (product) {
+      let curentPrice = product.price;
+      let discount = curentPrice / 100 * 15;
+      let newPrice = curentPrice - discount;
+      product.price = newPrice;
+      console.log(product);
+    })
+
+    // for (let i = 0; i < products.length; i++) {
+    //   let curentPrice = products[i].price;
+    //   console.log(`curentPrice for ${i} = ${curentPrice}`);
+
+    //   let discount = curentPrice / 100 * 15;
+    //   console.log(discount);
+
+    //   let newPrice = curentPrice - discount;
+    //   console.log(newPrice);
+
+    //   products[i].price = newPrice;
+
+    //   console.log(products[i]);
+    // }
 
 
-
-    // let discount = 15;
-    // products.forEach(function (element, index) {
-      // let discountPrice3 = (products.price / 100) * 15;
-      // return discountPrice3;
+    // products.forEach(product => {
+    //   let curentPrice = product.price;
+    //   let discount = curentPrice / 100 * 15;
+    //   let newPrice = curentPrice - discount;
+    //   product.price = newPrice;
     // });
+
+    // products.forEach(product => product.price *= 0.85);
+
 
 
 
